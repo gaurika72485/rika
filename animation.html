@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Animation</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            position: absolute; /* Allows the box to move */
+            left: 0; /* Starting position */
+        }
+    </style>
+</head>
+<body>
+    <div id="box"></div>
+
+    <script>
+        const box = document.getElementById('box');
+        let position = 0;
+
+        function move() {
+            position += 1; // Move 1 pixel
+            box.style.left = position + 'px'; // Update box position
+
+            // Repeat until the box moves off the screen
+            if (position < window.innerWidth - 100) {
+                requestAnimationFrame(move); // Continue the animation
+            }
+        }
+
+        move(); // Start the animation
+    </script>
+</body>
+</html>

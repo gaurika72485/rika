@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Registration</h1>
+        <form onsubmit="show()">
+            <input type="text" placeholder="Enter your name" id="name">
+            <br> <br>
+            <input type="email" placeholder="Enter your email" id="Email">
+            <br> <br>
+            <input type="number"  placeholder="Enter your number" id="number" >
+            <br> <br>
+            <input type="text"  placeholder="Enter your address" id="address">
+            <br> <br>
+            <input type="submit" placeholder="Register" >
+        </form>
+        <h2 id="msg" /h2>
+            <script>
+                function show()
+                {
+                    event.preventDefault();
+                    let name= document.getElementById("name");
+                    let Email=document.getElementById("Email");
+                    let number=document.getElementById("number");
+                    let msg=document.getElementById("msg");
+                    if(name.value === "")
+                {
+                    alert("Please enter name");
+                    msg.innerHTML=("");
+                    name.focus();
+                    return;
+                }
+                if(Email.value === "")
+                {
+                    alert("Please enter email");
+                    msg.innerHTML=("");
+                    name.focus();
+                    return;
+                }
+                if(number.value === "")
+                {
+                    alert("Please enter number");
+                    msg.innerHTML=("");
+                    name.focus();
+                    return;
+                }
+                msg.innerHTML=("Registration sussessful!")
+                }
+            </script>
+    </center>
+</body>
+</html>
+

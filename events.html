@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Events Demo</title>
+</head>
+<body>
+
+  <h2>JavaScript Events</h2>
+
+  <!-- 1. Click Event -->
+  <button id="clickBtn">Click Me</button><br><br>
+
+  <!-- 2. Mouseover Event -->
+  <div id="hoverDiv" style="width:100px; height:100px; background-color:lightblue;">
+    Hover over me
+  </div><br>
+
+  <!-- 3. Keydown Event -->
+  <input type="text" id="inputField" placeholder="Type something..." /><br><br>
+
+  <!-- 4. Submit Event -->
+  <form id="loginForm">
+    <button type="submit">Submit Form</button>
+  </form><br>
+
+  <!-- 5. Change Event -->
+  <select id="colorSelect">
+    <option value="red">Red</option>
+    <option value="green">Green</option>
+    <option value="blue">Blue</option>
+  </select>
+
+  <script>
+    // 1. Click Event
+    document.getElementById("clickBtn").addEventListener("click", () => {
+      alert("Button Clicked!");
+    });
+
+    // 2. Mouseover Event
+    document.getElementById("hoverDiv").addEventListener("mouseover", () => {
+      alert("Mouse is over the div!");
+    });
+
+    // 3. Keydown Event
+    document.getElementById("inputField").addEventListener("keydown", (event) => {
+      console.log("Key pressed:", event.key);
+    });
+
+    // 4. Submit Event
+    document.getElementById("loginForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      alert("Form Submitted!");
+    });
+
+    // 5. Change Event
+    document.getElementById("colorSelect").addEventListener("change", (event) => {
+      alert(`Selected: ${event.target.value}`);
+    });
+  </script>
+
+</body>
+</html>
